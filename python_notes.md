@@ -1,12 +1,35 @@
 # Python
-[ToC]
+## [Table of content](#python)
+  - [Variables](#variables)
+  - [Strings](#strings)
+  - [Lists](#lists)
+  - [Tuples](#tuples)
+  - [Dictionary](#dictionary)
+  - [Set](#set)
+  - [Looping through items](#looping-through-items)
+  - [Control flow](#control-flow)
+  - [User input](#user-input)
+  - [Functions](#functions)
+  - [Recursion](#recursion)
+  - [Lambda functions](#lambda-functions)
+  - [Filter, Map](#filter-map)
+  - [Object oriented programming](#object-oriented-programming)
+  - [Modules](#modules)
+  - [File handling](#file-handling)
+  - [Exception](#exception)
+  - [Python STL](#python-stl)
+  - [Storing data as JSON](#storing-data-as-json)
+  - [Testing](#testing)
+  - [Python style guide (PEP8)](#python-style-guide-pep8)
 ------------------
-
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
 ## Variables
-   + eg: `this_is_variable`
-   + Only letters, numbers and underscores.
-   + Avoid using python keywords and names.
-   + Use only lowercase letters
+* eg: `this_is_variable`
+* Only letters, numbers and underscores.
+* Avoid using python keywords and names.
+* Use only lowercase letters
+------------------
 <!-- ====================================================================== -->
 <!-- ====================================================================== -->
 ## Strings
@@ -26,8 +49,8 @@ subset_ch = s1[1:5]     # his i
 
 repeat_str = 'abc'*5    # abcabcabcabcabc
 
-s = " This is hello from Apurv  "
-len(s)
+s = " This is hello from Apurv  "   
+len(s)                              # 27
 s.title()                           # " This Is Hello From Apurv  "
 s.upper()                           # " THIS IS HELLP FROM APURV  "
 s.lower()                           # " this is hello from apurv  "
@@ -52,6 +75,7 @@ s = f"Hello! This is {first_name}"
 mul = "5*2"
 eval(mul)   # 10
 ```
+------------------
 <!-- ====================================================================== -->
 <!-- ====================================================================== -->
 ## Lists
@@ -112,6 +136,7 @@ squares = [item**2 for item in range(0,10)]
 cubes = [item**3 for item in num_list]
 squares_even = [item**2 for item in range(0,5) if item%2==0]   # [0,4,16]
 ```
+------------------
 <!-- ====================================================================== -->
 <!-- ====================================================================== -->
 ## Tuples
@@ -131,6 +156,7 @@ tup1,tup2 = (1,'a',2,'b'),(3,'c',4,'d')
 tup3 = (5,tup1,45,tup2,'f') # nested tuples
 
 ```
+------------------
 <!-- ====================================================================== -->
 <!-- ====================================================================== -->
 ## Dictionary
@@ -167,19 +193,19 @@ students.update({
     'Marks':[1,2,3,4]
     })
 ```
+------------------
 <!-- ====================================================================== -->
 <!-- ====================================================================== -->
 ## Set
-+ Unordered (unindexed) collection.
-+ Are immutable.
-+ Formed when curly brackets are used without key,value pairs.
-+ It always contains unique values.
+* Unordered (unindexed) collection.
+* Are immutable.
+* Formed when curly brackets are used without key,value pairs.
+* It always contains unique values.
+* `set()`: Forms list of unique items from list
 ```python
 my_set = {1,2,3,'a'}
 my_set = {1,1,2,2,'a','a'}  # {1,2,'a'}
-```
-`set()`: Forms list of unique items from list
-```python
+
 dup_list = [1,2,3,4,1,'a',1,1,2,'b',1,8,'b',"This"]
 unique_set = set(dup_list)  # {1, 2, 3, 4, 8, 'a', 'b', 'This'}
 
@@ -215,8 +241,11 @@ set3 = set1 ^ set2      # Symmetric Difference: {1, 2, 6, 7, 8, 9}
 | symmetric_difference_update() | inserts the symmetric differences from this set and another                    |
 | union()                       | Return a set containing the union of sets                                      |
 | update()                      | Update the set with the union of this set and others                           |
+
+------------------
 <!-- ====================================================================== -->
 <!-- ====================================================================== -->
+
 ## Looping through items
 ```python
 # method 1
@@ -238,6 +267,7 @@ for key in students:
     "do something with students['key']"
 
 ```
+------------------
 <!-- ====================================================================== -->
 <!-- ====================================================================== -->
 ## Control flow
@@ -284,6 +314,7 @@ for <CONDITION>:
     break           # exits loop at this point
     <STATEMENT2>
 ```
+------------------
 <!-- ====================================================================== -->
 <!-- ====================================================================== -->
 ## User input 
@@ -292,6 +323,7 @@ for <CONDITION>:
 name = input("Enter your name: ")
 age = int(input("Enter your age: "))
 ```
+------------------
 <!-- ====================================================================== -->
 <!-- ====================================================================== -->
 ## Functions
@@ -333,6 +365,7 @@ def build_profile(first, last, **user_info):
 # output with dictionary of all the values
 my_man = build_profile("Apurv","Kulkarni",location="Dresden",degree="MSc CMS")
 ```
+------------------
 <!-- ====================================================================== -->
 <!-- ====================================================================== -->
 ## Recursion
@@ -343,10 +376,11 @@ def recursive_function(arg_1):
     else:
         recursive_function(arg_1-1) # Recursive call
 ```
-+ More expensive than iteration
-  + Function call is expensive as it requires setting up of stack for each function call
-  + Requires unwinding of stack on function return
-+ *Tail recursion* → An optimized recursion
+* More expensive than iteration
+  * Function call is expensive as it requires setting up of stack for each function call
+  * Requires unwinding of stack on function return
+* *Tail recursion* → An optimized recursion
+------------------
 <!-- ====================================================================== -->
 <!-- ====================================================================== -->
 ## Lambda functions
@@ -356,6 +390,7 @@ print(func(4))          # 64
 
 num_list = [1,2,3,4,5,6,7,8,9]
 ```
+------------------
 <!-- ====================================================================== -->
 <!-- ====================================================================== -->
 ## Filter, Map
@@ -389,10 +424,11 @@ age_22 = list(filter(lambda x: x.age_<=22,elist))   # [Employee('Apurv2 kulkarni
 square = lambda x: x**2
 num_list3 = list(map(square,num_list))      # [1, 4, 9, 16, 25, 36, 49, 64, 81]
 ```
+------------------
 <!-- ====================================================================== -->
 <!-- ====================================================================== -->
 ## Object oriented programming
-+ Classes
+* Classes
     ```python
     class Dog:
         """ Dog class"""
@@ -419,12 +455,12 @@ num_list3 = list(map(square,num_list))      # [1, 4, 9, 16, 25, 36, 49, 64, 81]
         my_dog.age = 2          # modifying attribute values
         my_dog.update_age(4)    # modyfying attribute via method
     ```
-    + Method: Function that is a prt of the class
-        + `__init__(self, arg1, arg2,..)` : Called on creating new instance. `self` must be provided as first argument. It is automatically passed to other methods in class.  
-        + Variable access inside method: `self.arg1`
-    + Accessing attributes: `my_dog.age`
+    * Method: Function that is a prt of the class
+        * `__init__(self, arg1, arg2,..)` : Called on creating new instance. `self` must be provided as first argument. It is automatically passed to other methods in class.  
+        * Variable access inside method: `self.arg1`
+    * Accessing attributes: `my_dog.age`
   
-+ Inheritance
+* Inheritance
     ```python
     class Labrador(Dog):                # Subclass of superclass Dog
 
@@ -444,7 +480,8 @@ num_list3 = list(map(square,num_list))      # [1, 4, 9, 16, 25, 36, 49, 64, 81]
     my_lab.color_                       # Additional attribute
     my_lab.sit()                        # Overridden method
     ```
-+ Just like functions, classes can also be stored in another file and can be imported
+* Just like functions, classes can also be stored in another file and can be imported
+------------------
 <!-- ====================================================================== -->
 <!-- ====================================================================== -->
 ## Modules
@@ -463,6 +500,7 @@ fn()
 
 from module_name import * # not recommended
 ```
+------------------
 <!-- ====================================================================== -->
 <!-- ====================================================================== -->
 ## File handling
@@ -491,6 +529,9 @@ with open(<filename>,'a') as f:     # appending to a file
 | `w+` | overwrites the files and its contents         |
 | `a`  | appends contents                              |
 
+------------------
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
 ## Exception
 ```python
     try:                        # Try statement that needs to be tested
@@ -502,7 +543,9 @@ with open(<filename>,'a') as f:     # appending to a file
     else:                       # Runs the code block after try block is completed 
         <Statements>
 ```
-
+------------------
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
 ## Python STL
 ```python
 from random import randint
@@ -512,9 +555,11 @@ from random import choice
 players = ['a','b','c']
 random_selection = choice(players)  # randomly selects on item
 ```
-
+------------------
+<!-- ====================================================================== -->
+<!-- ====================================================================== -->
 ## Storing data as JSON
-+ JSON: JavaScript Object Notation
+* JSON: JavaScript Object Notation
 ```python
 import json
 num_list = [1,2,44,56,81,5]
@@ -526,13 +571,14 @@ with open(filename,'w') as f:   # saving file
 with open(filename) as f:       # loading file
     numbers = json.load(f)
 ```
+------------------
 <!-- ====================================================================== -->
 <!-- ====================================================================== -->
 ## Testing
-+ Unit tests: Tests to check one specific aspect of the code
-+ Test case: A collection of unit tests. A good test case considers all kind of inputs to a function/code.
+* Unit tests: Tests to check one specific aspect of the code
+* Test case: A collection of unit tests. A good test case considers all kind of inputs to a function/code.
 
-+ Testing a function
+* Testing a function
     ```python
     import unittest
     def get_formatted_name(first, last, middle=''):
@@ -564,10 +610,10 @@ with open(filename) as f:       # loading file
         unittest.main()
     ```
 
-+ Testing a class
-  + Testing a method  
+* Testing a class
+  * Testing a method  
 
-+ Assert methods in `unittest`:
+* Assert methods in `unittest`:
   | Method                    | Use                                 |
   | ------------------------- | ----------------------------------- |
   | `assertEqual(a, b)`       | Verify that `a == b`                |
@@ -576,26 +622,27 @@ with open(filename) as f:       # loading file
   | `assertFalse(x)`          | Verify that `x` is False            |
   | `assertIn(item, list)`    | Verify that `item` is in `list`     |
   | `assertNotIn(item, list)` | Verify that `item` is not in `list` |
+------------------
 <!-- ====================================================================== -->
 <!-- ====================================================================== -->
 ## Python style guide (PEP8)
-+ 4 spaces fro indentation
-+ Line length 
-  + Everything <= 79 characters
-  + Comments <= 72 charachters
-+ Naming
-    + Functions:
-      + Function name
-        + lowercase with underscores as seperator. 
+* 4 spaces fro indentation
+* Line length 
+  * Everything <= 79 characters
+  * Comments <= 72 charachters
+* Naming
+    * Functions:
+      * Function name
+        * lowercase with underscores as seperator. 
               `my_function`, `build_profile`
-      + Arguments
-        + lowercase with underscores as seperator. 
+      * Arguments
+        * lowercase with underscores as seperator. 
               `arg_1`, `arg_2`
-        + no spaces on either side of assignment operator.
+        * no spaces on either side of assignment operator.
               `def my_function(arg_1, arg_2, arg_3="default value")`
-      + Passing arguments: No spaces on either side of assignment operator.
+      * Passing arguments: No spaces on either side of assignment operator.
           `my_function(arg_1=val1, arg_2="val2")`
-      + Comments: Immidiately after function definition in docstring
+      * Comments: Immidiately after function definition in docstring
           `""" Function description """`
-    + Class
-      + Class name: `CamelCase`. Eg: `ElectricVehicle`, `UniversityStudent`
+    * Class
+      * Class name: `CamelCase`. Eg: `ElectricVehicle`, `UniversityStudent`
